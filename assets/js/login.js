@@ -29,7 +29,7 @@ $(function() {
         var { username, password } = data.field;
         $.ajax({
             type: "POST",
-            url: "http://api-breakingnews-web.itheima.net" + "/api/reguser",
+            url: "/api/reguser",
             data: { username, password },
             success: function(res) {
                 if (!res.status) {
@@ -48,7 +48,7 @@ $(function() {
         var { username, password } = data.field;
         $.ajax({
             type: "POST",
-            url: "http://api-breakingnews-web.itheima.net" + "/api/login",
+            url: "/api/login",
             data: { username, password },
             success: function(res) {
                 if (!res.status) {
