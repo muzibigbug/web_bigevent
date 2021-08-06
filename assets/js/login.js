@@ -24,7 +24,7 @@ $(function() {
             }
         }
     });
-    // 注册   已注册lplp/111111
+    // 监听提交   注册   已注册lplp/111111
     form.on('submit(form_reg)', function(data) {
         var { username, password } = data.field;
         $.ajax({
@@ -43,7 +43,7 @@ $(function() {
         })
         return false;
     });
-    // 登录
+    // //监听提交   登录
     form.on('submit(form_login)', function(data) {
         var { username, password } = data.field;
         $.ajax({
