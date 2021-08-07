@@ -9,7 +9,7 @@ $(function() {
     // 1.3 创建裁剪区域
     $image.cropper(options);
 
-    // 为上传按钮绑定点击事件
+    // 为上传按钮绑定点击事件，触发file表单
     $('#btnChooseImage').on('click', function(e) {
         $('#file').click();
     });
@@ -24,7 +24,7 @@ $(function() {
         var file = e.target.files[0];
         // 2.根据选择的文件,创建一个对应的URL地址
         var newImage = URL.createObjectURL(file);
-        // 3.重新初始化裁剪区域
+        // 3.为裁剪区域重新初始化图片路径
         $image
             .cropper('destroy') // 销毁旧的裁剪区域
             .attr('src', newImage) // 重新设置图片路径
@@ -41,7 +41,7 @@ $(function() {
                 width: 100,
                 height: 100
             })
-            .toDataURL('image/png') // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
+            .toDataURL('image/jpeg') // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
             // 2. 调用接口，把头像上传到服务器
         $.ajax({
             method: 'POST',
